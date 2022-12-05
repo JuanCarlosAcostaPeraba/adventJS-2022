@@ -7,6 +7,7 @@ Como es trabajo de oficina, su horario de trabajo es de lunes a viernes. Así qu
 
 Dado un año y una matriz con las fechas de los días festivos, devuelve el número de horas adicionales que se harían ese año:
 
+```
 const year = 2022
 const holidays = ['01/06', '04/01', '12/25'] // format MM/DD
 
@@ -15,6 +16,7 @@ const holidays = ['01/06', '04/01', '12/25'] // format MM/DD
 // 12/25 is December 25, Sunday. Do not count.
 
 countHours(year, holidays) // 2 days -> 4 extra hours in the year
+```
 
 Cosas a tener en cuenta:
 
@@ -26,14 +28,14 @@ El método Date.getDay() devuelve el día de la semana de una fecha. 0 es doming
 */
 
 function countHours(year, holidays) {
-    let extraHours = 0, day;
-    holidays.forEach(holiday => {
-        day = new Date(`${year}-${holiday.split("/")[0]}-${holiday.split("/")[1]}`).getDay();
-        if (day != 0 && day != 6) {
-            extraHours = extraHours + 2;
-        }
-    });
-    return extraHours;
+  let extraHours = 0, day;
+  holidays.forEach(holiday => {
+    day = new Date(`${year}-${holiday.split("/")[0]}-${holiday.split("/")[1]}`).getDay();
+    if (day != 0 && day != 6) {
+      extraHours = extraHours + 2;
+    }
+  });
+  return extraHours;
 }
 
 const year = 2022
